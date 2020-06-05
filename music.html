@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap" rel="stylesheet">
      <style>
-        
-             *{
+         
+         *{
                  box-sizing: border-box;
              }
              #box{
@@ -28,7 +28,6 @@
                  font-size: 1.2em;
                  background: radial-gradient(rgba(0, 0, 128, 0.876),rgba(32, 23, 23, 0.863));
              }
-
             body{
                 font-size: 15px;
                 font-family: 'Bitter', serif;
@@ -40,7 +39,7 @@
                font-size: 70px;
                margin-top:0px;
            }
-         #header-nav{
+           #header-nav{
              background:radial-gradient(navy,black);
              
              border-radius: 0;
@@ -49,122 +48,38 @@
             }
          .audio-element{
              margin-top: 150px;
-             width: 75%;
+             width: 80%;
              margin-bottom: 100px;
-             margin-left: 100px;
-          
-            
+             margin-left:60px;
+         }
+         b{
+             margin-left: 20px;
          }
          .img-responsive {
         display: block;
         height: auto;
         max-width: 80%;
     }
-    
-
-         #audio-adjust{
-             text-align: center;
-         }
-        
-.glow-on-hover {
-    width: 220px;
-    height: 50px;
-    border: none;
-    outline: none;
-    color: black;
-    background: linear-gradient(yellow,red);
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 10px;
-}
-
-.glow-on-hover:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8,black,navy,brown, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
+   #button-here{
+       text-align: center;
+       
+   }
+   .btn{
+       margin-top: 20px;
+       height:40px;
+       width: 200px;
+       background-color: navy;
+       color: white;
+   }
+   .btn:hover{
+       color: white;
+       border: 2px solid skyblue;
+       background-color: blue;
+   }
    
-}
-
-.glow-on-hover:active {
-    background: linear-gradient(yellow,red);
-}
-
-.glow-on-hover:active:after {
-    background: transparent;
-}
-
-.glow-on-hover:hover:before {
-    opacity: 1;
-}
-
-.glow-on-hover:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(yellow,red);
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-    
-}
-.glow-on-hover a:hover{
-    text-decoration:none;
-}
-.glow-on-hover a{
-    color: black;
-    font-size: 1.5em;
-}
-#set-button{
-    text-align:center;
-    margin-top: 20px;
-}
-
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
-/* ------------------------------------------------------------------------------------ */
-/* animation 2 */
-.ml6 {
-  position: relative;
-  font-weight: 100;
-  font-size: 1.5em;
-  color: aliceblue;
-}
-
-.ml6 .text-wrapper {
-  position: relative;
-  display: inline-block;
-  padding-top: 0.2em;
-  padding-right: 0.05em;
-  padding-bottom: 0.1em;
-  overflow: hidden;
-}
-
-.ml6 .letter {
-  display: inline-block;
-  line-height: 1em;
-}
-
-.fav{
-    text-align: center;
-    margin-top: -60px;
-}
+  
+  
+        
     </style> 
 </head>
 <body>
@@ -180,62 +95,72 @@
             </div>
         </nav>
     </header>
-   
-   
-    <audio class="audio-element" controls="true" preload="auto">
+  
+    <audio class="audio-element" controls="true" preload="none">
         <source type="audio/mpeg">
             <br>
             <b>Your outdated browser doesn't support audio.</b>
     </audio>
-
-   <div class="fav">
-    <h1 class="ml6">
-        <span class="text-wrapper">
-          <span class="letters">Here is your Lucky Song !!</span>
-        </span>
-      </h1>
-   </div>
+ 
    
     <div id="box"><br><b>Title</b>: <span id="songTitle"></span><br>
         <b>Singer</b>: <span id="songAlbum"></span><br>
        </div> 
-      <div id="set-button">
-        <button class="glow-on-hover" type="button"><a href="index.html">Back to HOME</a></button> 
-    
+      <div id="button-here">
+        <a href="index.html" class="btn btn-dark" role="button">BACK TO HOME</a>
+   
       </div> 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-   
-    <script>// Wrap every letter in a span
-        var textWrapper = document.querySelector('.ml6 .letters');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-        
-        anime.timeline({loop: true})
-          .add({
-            targets: '.ml6 .letter',
-            translateY: ["1.1em", 0],
-            translateZ: 0,
-            duration: 750,
-            delay: (el, i) => 50 * i
-          }).add({
-            targets: '.ml6',
-            opacity: 0,
-            duration: 1000,
-            easing: "easeOutExpo",
-            delay: 1000
-          });
-          </script>
-           <script>
-            var songs=[
-           {filename: "songs/Champion - Dwayne DJ Bravo 190Kbps.mp3", title: "Champion", singer: "DJ Bravo" },
-   
+    <script>
+        var songs=[
+        {filename: "songs/song1.mp3", title: "Closer", singer: "Chainsmokers"},
+           {filename: "songs/song2.mp3", title: "Tere Bin Nahi Lagda", singer: "Unknown" },
+           {filename: "songs/song3.mp3", title: "Pikachu", singer: "Unknown" },
+           {filename: "songs/song4.mp3", title: "Bulave tujhe yar aj meri galiyan", singer: "Akhil"},
+           {filename: "songs/song5.mp3", title: "Vaaste", singer: "Dhvani Bhanushali"},
+           {filename: "songs/song6.mp3", title: "ishq tera", singer: "Guru Randhawa" },
+           {filename: "songs/song7.mp3", title: "Can we kiss", singer: "Unknown" },
+           {filename: "songs/song8.mp3", title: "Filhaal tone", singer: "Arijit Singh" },
+           {filename: "songs/song9.mp3", title: "love me like you do", singer: "Ellie Goulding" },
+           {filename: "songs/song10.mp3", title: "Naina", singer: "Arijit Singh" },
+           {filename: "songs/song11.mp3", title: "Nazm nazm", singer: "Ayushman Khurana" },
+           {filename: "songs/song12.mp3", title: "On my way", singer: "Alen Walker" },
+           {filename: "songs/song13.mp3", title: "Perfect", singer: "Ed Shreen" },
+           {filename: "songs/song14.mp3", title: "Pubg song", singer: "Unknown" },
+           {filename: "songs/song15.mp3", title: "Rabb wangu", singer: "Jass Manak" },
+           {filename: "songs/song16.mp3", title: "Relation", singer: "Nikk" },
+           {filename: "songs/song17.mp3", title: "rula k gaya", singer: "Unknown" },
+           {filename: "songs/song18.mp3", title: "sau dard", singer: "Unknown" },
+           {filename: "songs/song19.mp3", title: "See you again", singer: "Unknown" },
+           {filename: "songs/song20.mp3", title: "Senorita", singer: "Camila Cabello" },
+           {filename: "songs/song21.mp3", title: "Shaayad", singer: "Arijit Singh" },
+           {filename: "songs/song22.mp3", title: "Sohneya", singer: "Unknown" },
+           {filename: "songs/song23.mp3", title: "Tere sang yara", singer: "Atif Aslam" },
+           {filename: "songs/song24.mp3", title: "Tu hi yaar mera", singer: "Arijeet Singh, Neha Kakkar" },
+           {filename: "songs/song25.mp3", title: "Tujhe kitna chahne lge hm", singer: "Arijit Singh" },
+           {filename: "songs/song26.mp3", title: "Tum hi ana", singer: "Jubin Nautiyal" },
+           {filename: "songs/song27.mp3", title: "Indian Army", singer: "Sumit Goswami" },
+           {filename: "songs/song28.mp3", title:"Yaar Superstar",singer:"Hardy Sandhu"},
+           {filename: "songs/song29.mp3",title:"She don't know",singer:"Millind Gaba"},
+           {filename: "songs/song30.mp3",title:"Coka",singer:"Sukhe"},
+           {filename: "songs/song31.mp3",title:"First class",singer:"Arijit Singh, Neeti Mohan"},
+           {filename: "songs/song32.mp3",title:"Sher aaya sher",singer:" Divine"},
+           {filename: "songs/song33.mp3",title:"Photo",singer:"Darshan Raval "},
+           {filename: "songs/song34.mp3",title:"Coca cola",singer:"Tony Kakkar"},
+           {filename: "songs/song35.mp3",title:"Ek ladki ko dekha toh",singer:"Darshan Raval"},
+           {filename: "songs/song36.mp3",title:"Daru Badnaam",singer:"Param Singh"},
+           {filename: "songs/song37.mp3",title:"Lakdi ki kathi",singer:"Unknown"},
+           {filename: "songs/song38.mp3",title:"Doraemon",singer:"Unknown"},
+           {filename: "songs/song39.mp3",title:"Coffin Dance",singer:"Unknown"}
+      
           
-              
-            ];
-            var randomIndex= Math.floor(Math.random()*songs.length);
-            var song=songs[randomIndex];
-            document.querySelector("source").src=song.filename;
-            document.getElementById("songTitle").textContent=song.title;
-            document.getElementById("songAlbum").textContent=song.singer;
-    
-        </script>
+        ];
+        var randomIndex= Math.floor(Math.random()*songs.length);
+        var song=songs[randomIndex];
+        document.querySelector("source").src=song.filename;
+        document.getElementById("songTitle").textContent=song.title;
+        document.getElementById("songAlbum").textContent=song.singer;
+
+    </script>
+   
+         
 </body>
