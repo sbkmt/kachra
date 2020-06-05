@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Magickey</title>
+    <link rel = "icon" href =  
+        "images/fav.png"
+        type = "image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap" rel="stylesheet">
+     <style>
+        
+             *{
+                 box-sizing: border-box;
+             }
+             #box{
+                 background-color: white;
+                 width:50%;
+                 margin-left: 10px;
+                 border: 1px solid navy;
+                 border-radius: 30px;
+                 color: white;
+                 text-align: center;
+                 padding: 10px;
+                 padding-bottom: 30px;
+                 margin: auto;
+                 font-size: 1.2em;
+                 background: radial-gradient(rgba(0, 0, 128, 0.876),rgba(32, 23, 23, 0.863));
+             }
+
+            body{
+                font-size: 15px;
+                font-family: 'Bitter', serif;
+                background: url("music-bg.jpg") no-repeat center fixed;
+                background-size: cover;
+            }
+           h1{
+               color:rgb(174, 190, 22);
+               font-size: 70px;
+               margin-top:0px;
+           }
+         #header-nav{
+             background:radial-gradient(navy,black);
+             
+             border-radius: 0;
+             border: 0;
+             height:125px;
+            }
+         .audio-element{
+             margin-top: 150px;
+             width: 75%;
+             margin-bottom: 100px;
+             margin-left: 100px;
+          
+            
+         }
+         .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 80%;
+    }
+    
+
+         #audio-adjust{
+             text-align: center;
+         }
+        
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: black;
+    background: linear-gradient(yellow,red);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8,black,navy,brown, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+   
+}
+
+.glow-on-hover:active {
+    background: linear-gradient(yellow,red);
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(yellow,red);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    
+}
+.glow-on-hover a:hover{
+    text-decoration:none;
+}
+.glow-on-hover a{
+    color: black;
+    font-size: 1.5em;
+}
+#set-button{
+    text-align:center;
+    margin-top: 20px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/* ------------------------------------------------------------------------------------ */
+/* animation 2 */
+.ml6 {
+  position: relative;
+  font-weight: 100;
+  font-size: 1.5em;
+  color: aliceblue;
+}
+
+.ml6 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml6 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+.fav{
+    text-align: center;
+    margin-top: -60px;
+}
+    </style> 
+</head>
+<body>
+   
+    <header>
+        <nav id="header-nav" class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <div class="navbar-brand">
+                        <a href="index.html"><img src="music-logo.png" class="img-responsive"> </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+   
+   
+    <audio class="audio-element" controls="true" preload="auto">
+        <source type="audio/mpeg">
+            <br>
+            <b>Your outdated browser doesn't support audio.</b>
+    </audio>
+
+   <div class="fav">
+    <h1 class="ml6">
+        <span class="text-wrapper">
+          <span class="letters">Here is your Lucky Song !!</span>
+        </span>
+      </h1>
+   </div>
+   
+    <div id="box"><br><b>Title</b>: <span id="songTitle"></span><br>
+        <b>Singer</b>: <span id="songAlbum"></span><br>
+       </div> 
+      <div id="set-button">
+        <button class="glow-on-hover" type="button"><a href="index.html">Back to HOME</a></button> 
+    
+      </div> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+   
+    <script>// Wrap every letter in a span
+        var textWrapper = document.querySelector('.ml6 .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        
+        anime.timeline({loop: true})
+          .add({
+            targets: '.ml6 .letter',
+            translateY: ["1.1em", 0],
+            translateZ: 0,
+            duration: 750,
+            delay: (el, i) => 50 * i
+          }).add({
+            targets: '.ml6',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+          });
+          </script>
+           <script>
+            var songs=[
+           {filename: "songs/Champion - Dwayne DJ Bravo 190Kbps.mp3", title: "Champion", singer: "DJ Bravo" },
+   
+          
+              
+            ];
+            var randomIndex= Math.floor(Math.random()*songs.length);
+            var song=songs[randomIndex];
+            document.querySelector("source").src=song.filename;
+            document.getElementById("songTitle").textContent=song.title;
+            document.getElementById("songAlbum").textContent=song.singer;
+    
+        </script>
+</body>

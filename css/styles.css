@@ -1,0 +1,226 @@
+body {
+    font-size: 15px;
+    font-family: 'Bitter', serif;
+    background: linear-gradient(to right,yellow,pink)  no-repeat fixed;
+}
+
+
+#header-nav {
+    background: radial-gradient(rgb(202, 76, 97),black);
+    border-radius: 0;
+    border: 0;
+    height:100px;
+}
+
+#header-nav button {
+    margin-top: 25px;
+}
+
+.navbar-brand, .navbar-nav li a {
+    line-height: 80px;
+    height: 80px;
+    padding-top: 0;
+}
+
+.navbar-brand h1 {
+    background: linear-gradient(to top,red,yellow);
+    background-clip: padding-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bolder;
+    font-size: 2 em;
+   
+    
+}
+
+
+#nav-list {
+    background-color: silver;
+}
+
+#nav-list a {
+    font-weight: bolder;
+    color: #282828;
+    font-size: 1.5 em;
+}
+
+#nav-list a:hover {
+    color: #202020;
+    background-color: #fce29e;
+}
+h1{
+    font-size: 70px;
+   
+}
+
+
+#main-outer {
+    width: 95%;
+}
+
+#main-outer h2 {
+    font-size: 3 em;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+#main-outer h3 {
+    font-size: 2 em;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+    /* ------------------------------------------------------------------------------------------ */
+    .menu_toggler{
+        position: absolute;
+        top: 2.5rem;
+        right: 5rem;
+        width: 5rem;
+        height: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        z-index: 1500;
+        transition: transform 650ms ease-out;
+    }
+    .menu_toggler.open{
+        transform: rotate(-45deg);
+    }
+    .top{
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: -100vh;
+        z-index: 50;
+        margin-left:-15px;
+        background: radial-gradient(rgb(151, 36, 36),black);
+        border-bottom-right-radius: 100%;
+        border-bottom-left-radius: 100%;
+        transition: all 650ms cubic-bezier(1,0,0,1);
+    }
+    .nav_list{
+        list-style: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    li{
+        margin: 0 2rem;
+    }
+    .nav_link{
+        font-family: 'Acme', sans-serif;
+        font-size: 5rem;
+        padding: 1rem;
+    }
+    .nav_link:hover,
+    .nav_link:focus{
+        background: linear-gradient(to top, yellow,red);
+        background-clip: border-box;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .top.open{
+        top: 0;
+        border-radius: initial;
+    }
+    .bar{
+        background: linear-gradient(to right, red, yellow);
+        width: 100%;
+        height: 4px;
+        border-radius: .8rem;
+    }
+    .bar.half{
+        width: 50%;
+    }
+    .bar.start{
+        transform-origin: right;
+        transition: transform 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    }
+    .open .bar.start{
+        transform: rotate(-450deg) translateX(.8rem);
+    }
+    .bar.end{
+        align-self: flex-end;
+        transform-origin: left;
+        transition: transform 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+    }
+    .open .bar.end{
+        transform: rotate(-450deg) translateX(-.8rem);
+    }
+    @media screen and (max-width: 768px){
+        .nav_list{
+            flex-direction: column;
+        }
+        .nav_link{
+            font-size: 4.5rem;
+        }
+        h1{
+            font-size:40px;
+        }
+        #header-nav{
+            height: 75px;
+        }
+        
+
+    }
+    @media screen and (max-width: 600px){
+        .menu_toggler{
+            top: 2rem;
+            right: 2rem;
+        }
+        li{
+            font-size: 1.8rem;
+        }
+        .nav_link{
+            font-size: 3.5rem;
+        }
+
+     
+    }
+    @media screen and (max-width: 350px){
+        h1{
+            font-size:30px;
+        }
+    }
+    .button-contained{
+        
+        
+        text-align: center;
+    }
+    .btn{
+        margin: 20px;
+        background-color: black;
+        color: white;
+    }
+    .btn:hover, .btn:active{
+        background-color: brown;
+        color: white;
+    }
+    .panel-footer {
+        margin-top: 30px;
+        padding-top: 35px;
+        padding-bottom: 30px;
+        background: linear-gradient(brown,black);
+        border-top: 0;
+        height: 180px;
+        text-align: center;
+      }
+      .text-center{
+          color: white;
+          padding-top:50px;
+      }
+      .img-responsive {
+        display: block;
+        height: auto;
+        max-width: 80%;
+    }
+    

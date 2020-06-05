@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Magickey</title>
+    <link rel = "icon" href =  
+        "images/fav.png"
+        type = "image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <style>
+        h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #fff;
+  background-color:rgb(7, 7, 56);
+  height: auto;
+  font-size: 2.5em;
+}
+body{
+  background-color:antiquewhite;
+  background : url("dice-bg.jpg") no-repeat center fixed;
+  background-size: cover;
+  margin: 0px;
+}
+
+#cube .front {
+  transform: 
+    translateZ(100px);
+}
+
+#cube .back {
+  transform: 
+    rotateX(-180deg)
+    translateZ(100px);
+}
+
+#cube .right {
+  transform:
+    rotateY(90deg)
+    translateZ(100px);
+}
+
+#cube .left {
+  transform:
+    rotateY(-90deg)
+    translateZ(100px);
+}
+
+#cube .top {
+  transform:
+    rotateX(90deg)
+    translateZ(100px);
+}
+
+#cube .bottom {
+  transform:
+    rotateX(-90deg)
+    translateZ(100px);
+}
+
+.container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 0 auto 40px;
+ ;
+  
+  perspective: 1000px;
+  perspective-origin: 50% 100%;
+}
+
+#cube {
+  width: 100%;
+  height: 100%;
+  top: 100px;
+  position: absolute;
+  
+  transform-style: preserve-3d;
+  
+  transition: transform 6s;
+}
+
+#cube:hover {
+  cursor: pointer;
+}
+
+#cube div {
+  background:rgb(7, 7, 56);
+  display: block;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  border: 2px solid #0b0c4b;
+  
+  margin: 0 auto;  
+  
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 500%;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.dot {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background:#fff;
+  border-radius: 15px;  
+}
+
+.front .dot1 { top: 85px; left: 85px; }
+.back .dot1 { top: 45px; left: 45px; }
+.back .dot2 { top: 125px; left: 125px; }
+.right .dot1 { top: 45px; left: 45px; }
+.right .dot2 { top: 85px; left: 85px; }
+.right .dot3 { top: 125px; left: 125px; }
+.left .dot1 { top: 45px; left: 45px; }
+.left .dot2 { top: 45px; left: 125px; }
+.left .dot3 { top: 125px; left: 45px; }
+.left .dot4 { top: 125px; left: 125px; }
+.top .dot1 { top: 45px; left: 45px; }
+.top .dot2 { top: 45px; left: 125px; }
+.top .dot3 { top: 85px; left: 85px; }
+.top .dot4 { top: 125px; left: 45px; }
+.top .dot5 { top: 125px; left: 125px; }
+.bottom .dot1 { top: 45px; left: 45px; }
+.bottom .dot2 { top: 45px; left: 85px; }
+.bottom .dot3 { top: 45px; left: 125px; }
+.bottom .dot4 { top: 125px; left: 45px; }
+.bottom .dot5 { top: 125px; left: 85px; }
+.bottom .dot6 { top: 125px; left: 125px; }
+/* ------------------------------------------------------------------------------ */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: black;
+    background: linear-gradient(navy,yellow,navy);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8,black,navy,brown, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+   
+}
+
+.glow-on-hover:active {
+    background: linear-gradient(navy,yellow,navy);
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black,rgb(32, 22, 22));
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    
+}
+.glow-on-hover a:hover{
+    text-decoration:none;
+    color: yellow;
+}
+.glow-on-hover a{
+    color: white;
+    font-size: 1.5em;
+    font-family: 'Bree Serif', serif;
+    text-decoration: none;
+}
+#set-button{
+    text-align:center;
+    margin-top: 200px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/* --------------------------------------------------------------------- */
+
+    </style>
+</head>
+<body>
+    <h1>Click on the dice to roll</h1>
+<section class="container">
+  <div id="cube">
+    <div class="front">
+      <span class="dot dot1"></span>
+    </div>
+    <div class="back">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>
+    </div>
+    <div class="right">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+    </div>
+    <div class="left">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+      <span class="dot dot4"></span>
+    </div>
+    <div class="top">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+      <span class="dot dot4"></span>
+      <span class="dot dot5"></span>
+    </div>
+    <div class="bottom">
+      <span class="dot dot1"></span>
+      <span class="dot dot2"></span>  
+      <span class="dot dot3"></span>
+      <span class="dot dot4"></span>
+      <span class="dot dot5"></span>
+      <span class="dot dot6"></span>
+    </div>
+  </div>
+</section>
+
+<div id="set-button">
+  <button class="glow-on-hover" type="button"><a href="index.html">BACK TO HOME</a></button> 
+
+</div> 
+    
+   
+    
+    <script>
+       var cube = document.getElementById('cube');
+
+var min = 1;
+var max = 24;
+
+cube.onclick = function() {
+  var xRand = getRandom(max, min);
+  var yRand = getRandom(max, min);
+    
+  cube.style.webkitTransform = 'rotateX('+xRand+'deg) rotateY('+yRand+'deg)';
+  cube.style.transform = 'rotateX('+xRand+'deg) rotateY('+yRand+'deg)';
+}
+
+function getRandom(max, min) {
+  return (Math.floor(Math.random() * (max-min)) + min) * 90;
+}
+
+
+    </script>
+    
+
+</body>
