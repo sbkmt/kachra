@@ -5,7 +5,7 @@
     <link rel = "icon" href =  
         "images/fav.png"
         type = "image/x-icon">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital@1&display=swap" rel="stylesheet">
@@ -33,12 +33,9 @@
                 font-family: 'Bitter', serif;
                 background: url("music-bg.jpg") no-repeat center fixed;
                 background-size: cover;
+                height: 2000px;
             }
-           h1{
-               color:rgb(174, 190, 22);
-               font-size: 70px;
-               margin-top:0px;
-           }
+          
            #header-nav{
              background:radial-gradient(navy,black);
              
@@ -47,9 +44,9 @@
              height:125px;
             }
          .audio-element{
-             margin-top: 150px;
+             margin-top: 40px;
              width: 80%;
-             margin-bottom: 100px;
+             margin-bottom: 80px;
              margin-left:60px;
          }
          b{
@@ -62,29 +59,50 @@
     }
    #button-here{
        text-align: center;
+       margin-top: 10px;
+       width: fit-content;
+       margin-left: auto;
+       margin-right: auto;
+       background-color: navy;
+       height: 40px;
+       border-radius: 10px;
+       padding: 10px;
        
    }
    .btn{
-       margin-top: 20px;
-       height:40px;
-       width: 200px;
-       background-color: navy;
+       /* margin-top: 30px;
+       height:40px; */
        color: white;
+       text-decoration: none;
+       padding: 20px;
    }
-   .btn:hover{
+   #button-here:hover{
        color: white;
-       border: 2px solid skyblue;
-       background-color: blue;
+       text-decoration: none;
+       background: radial-gradient(navy,black);
    }
+   /* --------------------------------------------------------------------------- */
+    #head {
+        background: radial-gradient(navy,black);
+        height: auto;
+        margin-top: -135px;
+        margin-left: -10px;
+        margin-right: -10px;
+        
+    }   
+    h1{
+        font-size:200px;
+        padding-bottom: 5px;
+      
+    }
    
-  
   
         
     </style> 
 </head>
 <body>
    
-    <header>
+    <!-- <header>
         <nav id="header-nav" class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -94,7 +112,10 @@
                 </div>
             </div>
         </nav>
-    </header>
+    </header> -->
+    <div id="head">
+        <h1><a href="index.html"><img src="music-logo.png" class="img-responsive"> </a></h1>
+    </div>
   
     <audio class="audio-element" controls="true" preload="none">
         <source type="audio/mpeg">
@@ -149,8 +170,7 @@
            {filename: "songs/song35.mp3",title:"Ek ladki ko dekha toh",singer:"Darshan Raval"},
            {filename: "songs/song36.mp3",title:"Daru Badnaam",singer:"Param Singh"},
            {filename: "songs/song37.mp3",title:"Lakdi ki kathi",singer:"Unknown"},
-           {filename: "songs/song38.mp3",title:"Doraemon",singer:"Unknown"},
-           {filename: "songs/song39.mp3",title:"Coffin Dance",singer:"Unknown"}
+           {filename: "songs/song38.mp3",title:"Doraemon",singer:"Unknown"}
       
           
         ];
